@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    namespace 'com.tuapp.app_analisis_mecanico'  // Asegúrate de que coincida con el paquete
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.tuapp.app_analisis_mecanico"  // Este es el ID de tu aplicación
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+}
+
+// Agrega el plugin de servicios de Google si estás usando Firebase
+apply plugin: 'com.google.gms.google-services'
